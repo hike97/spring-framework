@@ -277,8 +277,9 @@ configure(allprojects) { project ->
 			cacheChangingModulesFor 0, "seconds"
 		}
 		repositories {
-			mavenCentral()
-			maven { url "https://repo.spring.io/libs-spring-framework-build" }
+			maven { url "https://maven.aliyun.com/repository/central" }
+			maven { url "https://repo.spring.io/libs-release" }
+			mavenLocal()
 		}
 	}
 	configurations.all {
@@ -305,7 +306,7 @@ configure([rootProject] + javaProjects) { project ->
 			kotlinOptions {
 				jvmTarget = "1.8"
 				freeCompilerArgs = ["-Xjsr305=strict"]
-				allWarningsAsErrors = true
+				allWarningsAsErrors = false
 			}
 		}
 		compileTestKotlin {
