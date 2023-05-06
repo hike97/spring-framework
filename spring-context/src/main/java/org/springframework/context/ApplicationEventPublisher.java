@@ -46,6 +46,7 @@ public interface ApplicationEventPublisher {
 	 * @see #publishEvent(Object)
 	 * @see org.springframework.context.event.ContextRefreshedEvent
 	 * @see org.springframework.context.event.ContextClosedEvent
+	 * 发布一个事件对象的方法，参数是一个ApplicationEvent类型或其子类的对象。
 	 */
 	default void publishEvent(ApplicationEvent event) {
 		publishEvent((Object) event);
@@ -65,6 +66,7 @@ public interface ApplicationEventPublisher {
 	 * @since 4.2
 	 * @see #publishEvent(ApplicationEvent)
 	 * @see PayloadApplicationEvent
+	 * 发布一个有效载荷的方法，参数是一个Object类型的对象，它会被封装成一个PayloadApplicationEvent对象。
 	 */
 	void publishEvent(Object event);
 
